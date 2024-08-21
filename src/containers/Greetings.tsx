@@ -5,7 +5,6 @@ import React, { useEffect } from "react";
 import Image from 'next/image';
 import { greetings } from "../portfolio";
 import { Button, Container, Row, Col } from "reactstrap";
-// import GreetingLottie from "../components/DisplayLottie";
 import Navigation from "../components/Navigation";
 import SocialLinks from "../components/SocialLinks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +15,6 @@ import ProfileImg from '../img/my_pix2.png';
 export const Greetings = () => {
   useEffect(() => {
     document.documentElement.scrollTop = 0;
-    // document.scrollingElement.scrollTop = 0;
   });
 
   return (
@@ -59,7 +57,6 @@ export const Greetings = () => {
                   )}
                 </Col>
                 <Col lg="6 pt-5">
-                  {/* <GreetingLottie animationPath="/lottie/coding.json" /> */}
                   <Image
                     src={ProfileImg}
                     style={{ width: "350px", height: "350px" }}
@@ -70,7 +67,7 @@ export const Greetings = () => {
               </Row>
             </div>
           </Container>
-          {/* SVG separator */}
+          
           <div className="separator separator-bottom separator-skew">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -84,10 +81,8 @@ export const Greetings = () => {
             </svg>
           </div>
         </section>
-        {/* 1st Hero Variation */}
       </div>
     </main>
   );
 };
 
-// export default Greetings;

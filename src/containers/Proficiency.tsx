@@ -44,4 +44,4 @@ export const Proficiency = () => {
   );
 };
 
-// export default Proficiency;
+

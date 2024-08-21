@@ -7,7 +7,6 @@ import { Card, Col, Row, Container } from "reactstrap";
 import ProfilePix from '../img/my_pix2.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarker } from "@fortawesome/free-solid-svg-icons";
-// import { GithubUserType } from "../types";
 import SocialLinks from "./SocialLinks";
 
 export const GithubProfileCard = () => {
