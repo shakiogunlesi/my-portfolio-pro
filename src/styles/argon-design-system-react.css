@@ -75,9 +75,9 @@
 html {
 	font-family: sans-serif;
 	line-height: 1.15;
-	text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/* text-size-adjust: 100%; */
+	/* -webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
 }
 
 article,
@@ -135,7 +135,7 @@ abbr[data-original-title] {
 	text-decoration: underline dotted;
 	cursor: help;
 	border-bottom: 0;
-	text-decoration-skip-ink: none;
+	/* text-decoration-skip-ink: none; */
 }
 
 address {
@@ -303,12 +303,12 @@ select {
 	word-wrap: normal;
 }
 
-button,
+/* button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
 	-webkit-appearance: button;
-}
+} */
 
 button:not(:disabled),
 [type="button"]:not(:disabled),
@@ -331,12 +331,12 @@ input[type="checkbox"] {
 	padding: 0;
 }
 
-input[type="date"],
+/* input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
 input[type="month"] {
 	-webkit-appearance: listbox;
-}
+} */
 
 textarea {
 	overflow: auto;
@@ -373,7 +373,7 @@ progress {
 
 [type="search"] {
 	outline-offset: -2px;
-	-webkit-appearance: none;
+	/* -webkit-appearance: none; */
 }
 
 [type="search"]::-webkit-search-decoration {
@@ -1833,7 +1833,7 @@ pre code {
 		display: block;
 		width: 100%;
 		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
+		/* -webkit-overflow-scrolling: touch; */
 	}
 	.table-responsive-sm > .table-bordered {
 		border: 0;
@@ -1845,7 +1845,7 @@ pre code {
 		display: block;
 		width: 100%;
 		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
+		/* -webkit-overflow-scrolling: touch; */
 	}
 	.table-responsive-md > .table-bordered {
 		border: 0;
@@ -1857,7 +1857,7 @@ pre code {
 		display: block;
 		width: 100%;
 		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
+		/* -webkit-overflow-scrolling: touch; */
 	}
 	.table-responsive-lg > .table-bordered {
 		border: 0;
@@ -1869,7 +1869,7 @@ pre code {
 		display: block;
 		width: 100%;
 		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
+		/* -webkit-overflow-scrolling: touch; */
 	}
 	.table-responsive-xl > .table-bordered {
 		border: 0;
@@ -1880,7 +1880,7 @@ pre code {
 	display: block;
 	width: 100%;
 	overflow-x: auto;
-	-webkit-overflow-scrolling: touch;
+	/* -webkit-overflow-scrolling: touch; */
 }
 .table-responsive > .table-bordered {
 	border: 0;
@@ -2418,7 +2418,7 @@ textarea.form-control.is-invalid {
 	color: #525f7f;
 	text-align: center;
 	vertical-align: middle;
-	-webkit-user-select: none;
+	/* -webkit-user-select: none; */
 	background-color: transparent;
 	border: 1px solid transparent;
 	padding: 0.625rem 1.25rem;
@@ -4921,8 +4921,8 @@ input[type="button"].btn-block {
 	.card-columns {
 		column-count: 3;
 		column-gap: 1.25rem;
-		orphans: 1;
-		widows: 1;
+		/* orphans: 1;
+		widows: 1; */
 	}
 	.card-columns .card {
 		display: inline-block;
@@ -5937,7 +5937,7 @@ a.close.disabled {
 	background-clip: padding-box;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(10px);
+	/* backdrop-filter: blur(10px); */
 	opacity: 0;
 	border-radius: 0.25rem;
 }
@@ -14005,19 +14005,19 @@ a.text-darker:focus {
 	img {
 		page-break-inside: avoid;
 	}
-	p,
+	/* p,
 	h2,
 	h3 {
 		orphans: 3;
 		widows: 3;
-	}
+	} */
 	h2,
 	h3 {
 		page-break-after: avoid;
 	}
-	@page {
+	/* @page {
 		size: a3;
-	}
+	} */
 	body {
 		min-width: 992px !important;
 	}
@@ -19382,9 +19382,9 @@ span.flatpickr-weekday {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
-	-webkit-flex-wrap: wrap;
+	/* -webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
+	-ms-flex-wrap: wrap; */
 	-ms-flex-pack: justify;
 	-webkit-justify-content: space-around;
 	justify-content: space-around;
@@ -19545,7 +19545,7 @@ span.flatpickr-weekday {
 
 .flatpickr-weekwrapper {
 	display: inline-block;
-	float: left;
+	/* float: left; */
 }
 
 .flatpickr-weekwrapper .flatpickr-weeks {
@@ -19676,7 +19676,7 @@ span.flatpickr-weekday {
 .flatpickr-time .flatpickr-am-pm {
 	height: inherit;
 	display: inline-block;
-	float: left;
+	/* float: left; */
 	line-height: inherit;
 	color: #393939;
 	font-weight: bold;
@@ -19845,7 +19845,7 @@ span.flatpickr-weekday {
 .datepicker table {
 	margin: 0;
 	-webkit-touch-callout: none;
-	user-select: none;
+	/* user-select: none; */
 }
 .datepicker table tr td {
 	border-radius: 50%;
@@ -20017,7 +20017,7 @@ span.flatpickr-weekday {
 .noUi-target,
 .noUi-target * {
 	-webkit-touch-callout: none;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
 	-webkit-user-select: none;
 	touch-action: none;
 	user-select: none;
@@ -20949,7 +20949,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 	display: inline-block;
 	vertical-align: middle;
 	text-decoration: none;
-	-moz-appearance: none;
+	/* -moz-appearance: none; */
 	cursor: pointer;
 	width: 100%;
 	margin: 0.5rem 0;
@@ -21163,7 +21163,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .color-swatch-header .pass-fail-item {
-	float: left;
+	/* float: left; */
 	display: inline-block;
 	text-align: center;
 	padding: 2px;
@@ -21249,7 +21249,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .table-colors .swatch,
 .table-colors:first-child .swatch {
-	float: left;
+	/* float: left; */
 	height: 40px;
 	width: 40px;
 	margin-right: 20px;
@@ -21265,7 +21265,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .table-colors .lozenge,
 .table-colors:first-child .lozenge {
-	float: left;
+	/* float: left; */
 	margin: 5px 10px 0 0;
 	font-size: 10px;
 	display: inline-block;
@@ -21300,13 +21300,13 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
 	tab-size: 4;
-	-webkit-hyphens: none;
-	hyphens: none;
+	/* -webkit-hyphens: none; */
+	/* hyphens: none; */
 	color: #5e6687;
 	border-radius: 0.25rem;
 	background: #f5f7ff;
 	direction: ltr;
-	-ms-hyphens: none;
+	/* -ms-hyphens: none; */
 }
 .highlight pre code {
 	font-size: 87.5%;
@@ -21409,7 +21409,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 		padding-bottom: 2rem;
 		overflow-x: auto;
 		white-space: nowrap;
-		-webkit-overflow-scrolling: touch;
+		/* -webkit-overflow-scrolling: touch; */
 	}
 }
 @media (min-width: 768px) {
