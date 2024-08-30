@@ -16,7 +16,7 @@ export const Education = () => {
           <Container className="w-full">
             <div className="d-flex px-3 w-full">
               <div>
-                <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-info">
+                <div data-testid="education-icon" className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-info">
                   <i className="fas fa-book"></i>
                 </div>
               </div>

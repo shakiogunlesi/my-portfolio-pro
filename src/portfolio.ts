@@ -165,3 +165,5 @@ export const seoData: SEODataType = {
     "Nwadei Shakirat Portfolio",
   ],
 };
+
+

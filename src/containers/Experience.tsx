@@ -15,8 +15,11 @@ export const Experience = () => {
           <Container>
             <div className="d-flex p-4">
               <div>
-                <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-info">
-                <i className="fas fa-briefcase"></i>
+                <div
+                  className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-info"
+                  data-testid="experience-icon"
+                >
+                  <i className="fas fa-briefcase" />
                 </div>
               </div>
               <div className="pl-4">

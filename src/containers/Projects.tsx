@@ -8,7 +8,14 @@ import ProjectsCard from "../components/ProjectsCard";
 import Fade from "react-awesome-reveal";
 import '@fortawesome/fontawesome-free/css/all.css';
 
+
+
 export const Projects = () => {
+  // Inside the Projects component
+  if (!projects || projects.length === 0) {
+    return null; // or return a placeholder if appropriate
+  }
+  
   return (
     projects && (
       <Fade duration={2000} triggerOnce>
