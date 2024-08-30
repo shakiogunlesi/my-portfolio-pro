@@ -43,11 +43,11 @@ export type SkillsSectionType = {
 };
 
 // * PROFICIENCY SECTION
-
-export type SkillBarsType = {
+export interface SkillBar {
   Stack: string;
-  progressPercentage: string;
-};
+  progressPercentage: number;
+}
+
 
 // * EDUCATION SECTION
 

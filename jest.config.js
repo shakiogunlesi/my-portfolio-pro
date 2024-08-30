@@ -1,17 +1,17 @@
+
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
-    '^.+\\.jsx?$': 'babel-jest', // If you are using Babel
+    '^.+\\.(js|jsx)$': 'babel-jest',
   },
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom'],
   moduleNameMapper: {
-    '\\.(css|less|sass|scss)$': 'identity-obj-proxy', // Optional, for mocking styles
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/src/__mocks__/fileMock.js', // Mock static files
-    '^react-awesome-reveal$': '<rootDir>/src/__mocks__/react-awesome-reveal.tsx',
+    '\\.css$': 'identity-obj-proxy',
+    '\\.svg$': '<rootDir>/__mocks__/svgMock.js',
+    '\\.json$': '<rootDir>/__mocks__/jsonMock.js', // Make sure this path is correct
+    '\\.lottie$': '<rootDir>/__mocks__/lottieMock.js',
   },
-  transformIgnorePatterns: ['/node_modules/'],
-  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts', '@testing-library/jest-dom'],
-  moduleDirectories: ['node_modules', 'src'],
 };
-

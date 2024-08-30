@@ -12,7 +12,7 @@ import { faFile } from "@fortawesome/free-solid-svg-icons";
 import ProfileImg from '../img/my_pix2.png';
 
 
-export const Greetings = () => {
+export const Greetings: React.FC = () => {
   useEffect(() => {
     document.documentElement.scrollTop = 0;
   });
@@ -86,3 +86,6 @@ export const Greetings = () => {
   );
 };
 
+
+
+Greetings.displayName = 'Greetings';

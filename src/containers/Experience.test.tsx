@@ -5,7 +5,16 @@ import { Experience } from './Experience';
 import { experience } from '../portfolio';
 
 // Mocking child components and other dependencies
-jest.mock('../components/ExperienceCard', () => (props: any) => <div data-testid="experience-card">{JSON.stringify(props)}</div>);
+jest.mock('../components/ExperienceCard', () => {
+  const MockExperienceCard = (props: any) => (
+    <div data-testid="experience-card">{JSON.stringify(props)}</div>
+  );
+  
+  MockExperienceCard.displayName = 'MockExperienceCard';
+  
+  return MockExperienceCard;
+});
+
 jest.mock('react-awesome-reveal', () => ({
   Fade: ({ children }: any) => <div>{children}</div>,
 }));

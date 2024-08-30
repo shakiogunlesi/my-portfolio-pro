@@ -4,7 +4,7 @@ import {
   ExperienceType,
   ProjectType,
   SkillsSectionType,
-  SkillBarsType,
+  // SkillBar,
   SEODataType,
   SocialLinksType,
   GreetingsType,
@@ -75,20 +75,21 @@ export const skillsSection: SkillsSectionType = {
   ],
 };
 
-export const SkillBars: SkillBarsType[] = [
-  {
-    Stack: "Frontend/Design", //Insert stack or technology you have experience in
-    progressPercentage: "95", //Insert relative proficiency in percentage
-  },
-  {
-    Stack: "Backend",
-    progressPercentage: "60",
-  },
-  {
-    Stack: "Programming",
-    progressPercentage: "80",
-  },
-];
+// export const SkillBar: SkillBarsType[] = [
+//   {
+//     Stack: "Frontend/Design", // Insert stack or technology you have experience in
+//     progressPercentage: 95,   // Insert relative proficiency as a number
+//   },
+//   {
+//     Stack: "Backend",
+//     progressPercentage: 60,
+//   },
+//   {
+//     Stack: "Programming",
+//     progressPercentage: 80,
+//   },
+// ];
+
 
 export const educationInfo: EducationType[] = [
   {
@@ -166,4 +167,9 @@ export const seoData: SEODataType = {
   ],
 };
 
+// export interface SkillBar {
+//   Stack: string;
+//   progressPercentage: number;
+// }
 
+// export type SkillBars = SkillBar[];

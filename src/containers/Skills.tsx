@@ -7,7 +7,7 @@ import { Col, Container, Row, UncontrolledTooltip } from "reactstrap";
 import DisplayLottie from "../components/DisplayLottie";
 import { skillsSection } from "../portfolio";
 
-export const Skills = () => {
+export const Skills: React.FC = () => {
   return (
     skillsSection && (
       <Fade duration={2000} triggerOnce>
@@ -58,3 +58,6 @@ export const Skills = () => {
     )
   );
 };
+
+
+Skills.displayName = 'Skills';

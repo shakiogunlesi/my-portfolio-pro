@@ -1,30 +1,27 @@
+// src/containers/Proficiency.test.tsx
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { Proficiency } from './Proficiency';
+import { SkillBar } from '../types/sections';
 
-
-const mockSkillBars = [
-  { Stack: 'JavaScript', progressPercentage: '80' },
-  { Stack: 'React', progressPercentage: '70' },
+// Updated mock data with more entries for better coverage
+const mockSkillBars: SkillBar[] = [
+  { Stack: 'JavaScript', progressPercentage: 90 },
+  { Stack: 'TypeScript', progressPercentage: 80 },
+  { Stack: 'React', progressPercentage: 85 },
+  { Stack: 'Node.js', progressPercentage: 75 },
+  { Stack: 'CSS', progressPercentage: 70 },
+  { Stack: 'HTML', progressPercentage: 95 },
 ];
 
-jest.mock('../portfolio', () => ({
-  SkillBars: mockSkillBars,
-}));
-
-jest.mock('../components/DisplayLottie', () => jest.fn(() => <div>Mocked GreetingLottie</div>));
-
-import { Proficiency }from './Proficiency'; // Correct for default export
-
 describe('Proficiency Component', () => {
-    it('renders nothing when SkillBars is undefined or not an array', () => {
-      const { container } = render(<Proficiency skillBarsData={undefined} />);
-      expect(container.firstChild).toBeNull();
-  
-      const { container: container2 } = render(<Proficiency skillBarsData={null as any} />);
-      expect(container2.firstChild).toBeNull();
-  
-      const { container: container3 } = render(<Proficiency skillBarsData={[]} />);
-      expect(container3.firstChild).toBeNull();
+  it('renders correctly with skillBarsData', () => {
+    const { getByText } = render(<Proficiency skillBarsData={mockSkillBars} />);
+
+    mockSkillBars.forEach(skill => {
+      expect(getByText(skill.Stack)).toBeInTheDocument();
+      expect(getByText(`${skill.progressPercentage}%`)).toBeInTheDocument();
     });
   });
+});

@@ -9,13 +9,20 @@ import { Skills } from '../containers/Skills';
 import { Projects } from '../containers/Projects';
 import { GithubProfileCard } from '../components/GithubProfileCard';
 
+
+const skillBarsData = [
+  { Stack: 'JavaScript', progressPercentage: 90 },
+  { Stack: 'TypeScript', progressPercentage: 80 },
+];
+
+
 const Home: NextPage = () => {
   return (
     <main className="w-full min-h-screen items-center">
       <div className="items-center min-h-screen py-2">
         <Greetings />
         <Skills />
-        <Proficiency />
+        <Proficiency skillBarsData={skillBarsData} />
         <Education />
         <Experience />
         <Projects />

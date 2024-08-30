@@ -10,7 +10,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 
 
-export const Projects = () => {
+export const Projects: React.FC = () => {
   // Inside the Projects component
   if (!projects || projects.length === 0) {
     return null; // or return a placeholder if appropriate
@@ -44,3 +44,4 @@ export const Projects = () => {
 };
 
 
+Projects.displayName = 'Projects';

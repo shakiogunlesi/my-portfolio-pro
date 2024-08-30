@@ -1,57 +1,44 @@
 "use client";
 
 import React from 'react';
+import { Container, Row, Progress, Col } from 'reactstrap';
+import Fade from 'react-awesome-reveal';
 import GreetingLottie from '../components/DisplayLottie';
-
-interface SkillBarsType {
-  Stack: string;
-  progressPercentage: number;
-  // other properties...
-}
+import { SkillBar } from '../types/sections';
 
 interface ProficiencyProps {
-  skillBarsData?: SkillBarsType[];
+  skillBarsData: SkillBar[];
 }
 
-export const Proficiency: React.FC<ProficiencyProps> = ({ skillBarsData = [] }) => {
-  // Handle the case where skillBarsData is undefined or not an array
-  if (!Array.isArray(skillBarsData) || skillBarsData.length === 0) {
-    return null;
-  }
-
+export const Proficiency: React.FC<ProficiencyProps> = ({ skillBarsData }) => {
   return (
-    <section className="section section-lg">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-6">
-            <h1 className="h1">Proficiency</h1>
-            {skillBarsData.map((skill, index) => (
-              <div key={index} className="progress-info">
-                <div className="progress-label">
-                  <span>{skill.Stack}</span>
+    <div>
+      <Container className="section section-lg">
+        <Fade duration={2000} triggerOnce>
+          <Row>
+            <Col lg="6">
+              <h1 className="h1">Proficiency</h1>
+              {skillBarsData.map(skill => (
+                <div key={skill.Stack}>
+                  <h3>{skill.Stack}</h3>
+                  <p>{skill.progressPercentage}%</p>
+                  <Progress
+                    max="100"
+                    value={skill.progressPercentage}
+                    color="info"
+                    role="progressbar"
+                    aria-label={skill.Stack}
+                  />
                 </div>
-                <div className="progress-percentage">
-                  <span>{skill.progressPercentage}%</span>
-                </div>
-                <div
-                  aria-label={skill.Stack}
-                  className="progress"
-                  role="progressbar"
-                  aria-valuemax={100}
-                  aria-valuemin={0}
-                  aria-valuenow={skill.progressPercentage}
-                  style={{ width: `${skill.progressPercentage}%` }}
-                >
-                  {/* Progress bar inner div */}
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="col-lg-6">
-            <GreetingLottie animationPath="/lottie/build.json" />
-          </div>
-        </div>
-      </div>
-    </section>
+              ))}
+            </Col>
+            <Col lg="6">
+              <GreetingLottie animationPath="/lottie/build.json" />
+            </Col>
+          </Row>
+        </Fade>
+      </Container>
+    </div>
   );
 };
+Proficiency.displayName = 'Proficiency';

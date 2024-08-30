@@ -1,13 +1,33 @@
 import React from 'react';
-import Image from 'next/image';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Greetings } from './Greetings';
 import { greetings } from '../portfolio';
 
-jest.mock('../components/Navigation', () => () => <nav>Mocked Navigation</nav>);
-jest.mock('../components/SocialLinks', () => () => <div>Mocked SocialLinks</div>);
-jest.mock('next/image', () => (props: any) => <Image {...props} alt="Mocked Image" />);
+jest.mock('../components/Navigation', () => {
+  const MockNavigation = () => <nav>Mocked Navigation</nav>;
+  
+  MockNavigation.displayName = 'MockNavigation';
+  
+  return MockNavigation;
+});
+
+jest.mock('../components/SocialLinks', () => {
+  const MockSocialLinks = () => <div>Mocked SocialLinks</div>;
+  
+  MockSocialLinks.displayName = 'MockSocialLinks';
+  
+  return MockSocialLinks;
+});
+
+
+jest.mock('next/image', () => {
+  const MockImage = (props: any) => <div {...props} alt="Mocked Image" />;
+  
+  MockImage.displayName = 'MockImage';
+  
+  return MockImage;
+});
 
 describe('Greetings Component', () => {
   it('renders the title and description correctly', () => {

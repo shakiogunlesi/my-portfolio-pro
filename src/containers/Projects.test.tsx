@@ -1,26 +1,37 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { Proficiency } from './Proficiency'; // Import the Proficiency component
+import { SkillBar } from '../types/sections';
 
-const mockProjects = [
-  { name: 'Project 1', description: 'Description 1', link: 'http://example.com' },
-  { name: 'Project 2', description: 'Description 2', link: 'http://example.com' },
+// Mock data for SkillBar
+const mockSkillBars: SkillBar[] = [
+  { Stack: 'JavaScript', progressPercentage: 90 },
+  { Stack: 'TypeScript', progressPercentage: 80 },
+  { Stack: 'React', progressPercentage: 85 },
 ];
 
-jest.mock('../portfolio', () => ({
-  projects: mockProjects,
-}));
+// Mock the GreetingLottie component
+jest.mock('../components/DisplayLottie', () => {
+  const MockDisplayLottie = () => <div data-testid="lottie-animation" />;
+  
+  MockDisplayLottie.displayName = 'MockDisplayLottie';
+  
+  return MockDisplayLottie;
+});
 
-jest.mock('../components/ProjectsCard', () => ({ name }: { name: string }) => (
-  <div>{name}</div>
-));
 
-import { Projects } from './Projects';
+describe('Proficiency Component', () => {
+  it('renders correctly with skillBarsData', () => {
+    const { getByText, getByTestId } = render(<Proficiency skillBarsData={mockSkillBars} />);
 
-describe('Projects Component', () => {
-  it('renders correctly', () => {
-    const { getByText } = render(<Projects />);
-    expect(getByText('Project 1')).toBeInTheDocument();
-    expect(getByText('Project 2')).toBeInTheDocument();
+    // Check if skill bars are rendered correctly
+    mockSkillBars.forEach(skill => {
+      expect(getByText(skill.Stack)).toBeInTheDocument();
+      expect(getByText(`${skill.progressPercentage}%`)).toBeInTheDocument();
+    });
+
+    // Check if the GreetingLottie component is rendered
+    expect(getByTestId('lottie-animation')).toBeInTheDocument();
   });
 });
