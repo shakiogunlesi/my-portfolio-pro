@@ -1,17 +1,15 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 
 // Define the Props type
 type Props = {
   animationPath: string;
 };
 
-type AnimationData = { [key: string]: any }; // Adjust this type based on your data
-
 const GreetingLottie = ({ animationPath }: Props) => {
-  const [animationData, setAnimationData] = useState<AnimationData | null>(null);
+  const [animationData, setAnimationData] = useState<any>(null);
 
   useEffect(() => {
     fetch(animationPath)
@@ -20,19 +18,11 @@ const GreetingLottie = ({ animationPath }: Props) => {
       .catch((error) => console.error("Error loading animation data:", error));
   }, [animationPath]);
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-      context: '2d',
-    },
-  };
-
   return (
     <div onClick={() => null}>
-      {animationData ? <Lottie options={defaultOptions} data-testid="lottie-animation" /> : null}
+      {animationData ? (
+        <Lottie animationData={animationData} loop={true} autoplay={true} />
+      ) : null}
     </div>
   );
 };
