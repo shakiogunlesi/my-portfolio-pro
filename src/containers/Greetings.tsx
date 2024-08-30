@@ -4,7 +4,7 @@
 import React, { useEffect } from "react";
 import Image from 'next/image';
 import { greetings } from "../portfolio";
-import { Button, Container, Row, Col } from "reactstrap";
+import { Button, Container, Row, Col } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import SocialLinks from "../components/SocialLinks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -44,19 +44,19 @@ export const Greetings: React.FC = () => {
                   {greetings.resumeLink && (
                     <div className="btn-wrapper my-4">
                       <Button
-                        className="btn-white btn-icon mb-3 mb-sm-0 ml-1 px-4 py-3 font-semibold text-lg"
+                        className="btn-black btn-icon mb-3 mb-sm-0 ml-1 px-4 py-3 font-semibold text-lg"
                         color="default"
                         href={greetings.resumeLink}
                       >
                         <span className="btn-inner--icon mr-1">
-                          <FontAwesomeIcon icon={faFile} />
+                          <FontAwesomeIcon icon={faFile}/>
                         </span>
-                        <span className="btn-inner--text">See My Resume</span>
+                        <span className="btn-inner--text text-white">See My Resume</span>
                       </Button>
                     </div>
                   )}
                 </Col>
-                <Col lg="6 pt-5">
+                <Col lg={6} className="pt-5">
                   <Image
                     src={ProfileImg}
                     style={{ width: "350px", height: "350px" }}

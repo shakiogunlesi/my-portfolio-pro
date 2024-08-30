@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardBody, Col, Button } from "reactstrap";
+import { Card, CardBody, Col, Button } from "react-bootstrap";
 import { ProjectType } from "../types/sections";
 
 const ProjectsCard = ({ name, desc, github, link }: ProjectType) => {

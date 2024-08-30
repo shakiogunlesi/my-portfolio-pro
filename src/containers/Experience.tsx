@@ -2,7 +2,7 @@
 
 import React from "react";
 import { experience } from "../portfolio";
-import { Container, Row } from "reactstrap";
+import { Container, Row } from "react-bootstrap";
 import ExperienceCard from "../components/ExperienceCard";
 import { Fade } from 'react-awesome-reveal';
 import '@fortawesome/fontawesome-free/css/all.css';

@@ -3,7 +3,7 @@
 
 import React from "react";
 import { projects } from "../portfolio";
-import { Container, Row } from "reactstrap";
+import { Container, Row } from "react-bootstrap";
 import ProjectsCard from "../components/ProjectsCard";
 import Fade from "react-awesome-reveal";
 import '@fortawesome/fontawesome-free/css/all.css';

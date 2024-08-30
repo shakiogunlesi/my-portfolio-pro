@@ -1,16 +1,17 @@
 import React from "react";
 import Image from 'next/image';
-import Clogo from "../img/icons/company_logo.png"
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Col } from "reactstrap";
+import Clogo from "../img/icons/company_logo.png";
+import { Card, Col } from "react-bootstrap";
 import { ExperienceType } from "../types/sections";
 
-const ExperienceCard = ({company, role, date, desc, descBullets }: ExperienceType) => {
+const ExperienceCard = ({ company, role, date, desc, descBullets }: ExperienceType) => {
   return (
     <Col lg="6">
       <Card style={{ flex: 1 }} className="shadow-lg--hover my-4 shadow border-0 text-center rounded h-100">
-        <CardBody className="">
+        <Card.Body>
           <Image
             src={Clogo}
+            alt="Company Logo"
             style={{
               objectFit: "cover",
               left: 0,
@@ -23,26 +24,27 @@ const ExperienceCard = ({company, role, date, desc, descBullets }: ExperienceTyp
               borderRadius: "50%",
             }}
             className="shadow mb-3"
-            alt="Meganos Logo"
           />
-          <CardTitle tag="h4" className="mb-2">
+          <Card.Title as="h2" className="text-primary">
             {company}
-          </CardTitle>
-          <CardSubtitle tag="h5" className="mb-2">
+          </Card.Title>
+          <Card.Subtitle as="h6" className="text-muted">
             {role}
-          </CardSubtitle>
-          <CardSubtitle>{date}</CardSubtitle>
-          <CardText tag="div" className="description my-3 text-left">
+          </Card.Subtitle>
+          <Card.Text className="text-muted">
+            {date}
+          </Card.Text>
+          <Card.Text as="div" className="description my-3 text-left">
             {desc}
-            <ul>
-              {descBullets
-                ? descBullets.map(desc => {
-                    return <li key={desc}>{desc}</li>;
-                  })
-                : null}
-            </ul>
-          </CardText>
-        </CardBody>
+            {descBullets && (
+              <ul>
+                {descBullets.map((bullet, index) => (
+                  <li key={index}>{bullet}</li>
+                ))}
+              </ul>
+            )}
+          </Card.Text>
+        </Card.Body>
       </Card>
     </Col>
   );

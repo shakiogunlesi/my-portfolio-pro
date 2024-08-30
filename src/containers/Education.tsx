@@ -3,7 +3,7 @@
 import React from "react";
 import EducationCard from "../components/EducationCard";
 import { educationInfo } from "../portfolio";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { Fade } from 'react-awesome-reveal';
 import '@fortawesome/fontawesome-free/css/all.css';
 

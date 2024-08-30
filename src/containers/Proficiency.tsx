@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Container, Row, Progress, Col } from 'reactstrap';
+import { Container, Row, ProgressBar, Col } from 'react-bootstrap'; // Corrected import for react-bootstrap
 import Fade from 'react-awesome-reveal';
 import GreetingLottie from '../components/DisplayLottie';
 import { SkillBar } from '../types/sections';
@@ -22,11 +22,9 @@ export const Proficiency: React.FC<ProficiencyProps> = ({ skillBarsData }) => {
                 <div key={skill.Stack}>
                   <h3>{skill.Stack}</h3>
                   <p>{skill.progressPercentage}%</p>
-                  <Progress
-                    max="100"
-                    value={skill.progressPercentage}
-                    color="info"
-                    role="progressbar"
+                  <ProgressBar
+                    now={skill.progressPercentage} // Changed from "value" to "now"
+                    label={`${skill.progressPercentage}%`} // Added label to show percentage
                     aria-label={skill.Stack}
                   />
                 </div>
@@ -41,4 +39,5 @@ export const Proficiency: React.FC<ProficiencyProps> = ({ skillBarsData }) => {
     </div>
   );
 };
+
 Proficiency.displayName = 'Proficiency';

@@ -87,7 +87,7 @@ const Navigation = () => {
                   </Col>
                 </Row>
               </div>
-              <Nav className="align-items-lg-center ml-lg-auto mt-[-80px]" navbar>
+              <Nav className="align-items-lg-center ml-lg-auto mt-nav" navbar>
               {socialLinks.facebook && (
                   <NavItem>
                     <NavLink

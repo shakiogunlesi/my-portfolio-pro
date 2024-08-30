@@ -3,7 +3,7 @@
 import { Icon } from "@iconify/react";
 import React, { Fragment } from "react";
 import Fade from "react-awesome-reveal";
-import { Col, Container, Row, UncontrolledTooltip } from "reactstrap";
+import { Col, Container, Row, OverlayTrigger, Tooltip } from "react-bootstrap";  // Corrected the import to "react-bootstrap"
 import DisplayLottie from "../components/DisplayLottie";
 import { skillsSection } from "../portfolio";
 
@@ -35,13 +35,19 @@ export const Skills: React.FC = () => {
                           aria-label={skill.skillName}
                         />
                       </div>
-                      <UncontrolledTooltip
-                        delay={0}
+                      <OverlayTrigger
+                        delay={{ show: 250, hide: 400 }} // Added delay with show/hide settings
                         placement="bottom"
-                        target={skill.skillName.replace(/\s/g, "")}
+                        overlay={
+                          <Tooltip id={`tooltip-${i}`}>
+                            {skill.skillName}
+                          </Tooltip>
+                        }
                       >
-                        {skill.skillName}
-                      </UncontrolledTooltip>
+                        <div>
+                          {/* The div wraps the icon to apply the overlay trigger */}
+                        </div>
+                      </OverlayTrigger>
                     </Fragment>
                   ))}
                 </div>
@@ -59,5 +65,4 @@ export const Skills: React.FC = () => {
   );
 };
 
-
-Skills.displayName = 'Skills';
+Skills.displayName = "Skills";

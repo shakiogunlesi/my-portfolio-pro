@@ -5729,6 +5729,10 @@ textarea.form-control-lg {
     right: 0!important
 }
 
+.mt-nav {
+    margin-top: -60px;
+}
+
 .end-50 {
     right: 50%!important
 }
@@ -27679,8 +27683,10 @@ textarea[resize=horizontal] {
     padding-bottom: 8rem!important;
 }
 
+
+
 .section-lg {
-    padding-top: 6rem!important;
+    padding-top: 3rem!important;
     padding-bottom: 6rem!important;
 }
 
