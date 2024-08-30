@@ -1,0 +1,21 @@
+diff --git a/node_modules/ci-info/index.js b/node_modules/ci-info/index.js
+index 4790726..7c96381 100644
+--- a/node_modules/ci-info/index.js
++++ b/node_modules/ci-info/index.js
+@@ -5,11 +5,13 @@ const vendors = require('./vendors.json')
+ const env = process.env
+ 
+ // Used for testing only
++const vendors = vendors || []; // Ensure vendors is defined and is an array
++
+ Object.defineProperty(exports, '_vendors', {
+   value: vendors.map(function (v) {
+-    return v.constant
+-  })
+-})
++    return v.constant;
++  }),
++});
+ 
+ exports.name = null
+ exports.isPR = null

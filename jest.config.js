@@ -1,3 +1,4 @@
+const path = require('path');
 
 module.exports = {
   preset: 'ts-jest',
@@ -11,7 +12,11 @@ module.exports = {
   moduleNameMapper: {
     '\\.css$': 'identity-obj-proxy',
     '\\.svg$': '<rootDir>/__mocks__/svgMock.js',
-    '\\.json$': '<rootDir>/__mocks__/jsonMock.js', // Make sure this path is correct
+    '\\.json$': path.resolve(__dirname, '__mocks__/jsonMock.js'),
     '\\.lottie$': '<rootDir>/__mocks__/lottieMock.js',
+  },
+  testEnvironment: "jsdom",
+  testEnvironmentOptions: {
+    resources: "usable",
   },
 };

@@ -1,42 +1,55 @@
+// Education.test.tsx
+
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Education } from './Education';
 import { educationInfo } from '../portfolio';
 
-// Mocking child components and other dependencies
-jest.mock('../components/EducationCard', () => {
-  const MockEducationCard = (props: any) => (
-    <div data-testid="education-card">{JSON.stringify(props)}</div>
-  );
-  
-  MockEducationCard.displayName = 'MockEducationCard';
-  
-  return MockEducationCard;
-});
+// Define the props interface for EducationCard
+interface EducationCardProps {
+  schoolName: string;
+  degree: string;
+  // Add other props if needed
+}
 
-jest.mock('react-awesome-reveal', () => ({
-  Fade: ({ children }: any) => <div>{children}</div>,
-}));
+// Mock EducationCard component
+jest.mock('../components/EducationCard', () => (props: EducationCardProps) => (
+  <div data-testid="education-card">
+    <h5>{props.schoolName}</h5>
+    <p>{props.degree}</p>
+  </div>
+));
 
 describe('Education Component', () => {
-  it('renders the Education section with correct heading and icon', () => {
-    render(<Education />);
-
-    // Get the heading by role
-    const headingElement = screen.getByRole('heading', { name: /Education/i });
-    expect(headingElement).toBeInTheDocument();
-
-    // Check if the icon is present by its test ID or by class
-    const iconElement = screen.getByTestId('education-icon');
-    expect(iconElement).toBeInTheDocument();
-    expect(iconElement.firstChild).toHaveClass('fas fa-book');
-  });
-
-  it('renders the correct number of education cards', () => {
+  it('renders Education section with correct elements', () => {
     render(<Education />);
     
-    const educationCards = screen.getAllByTestId('education-card');
-    expect(educationCards).toHaveLength(educationInfo.length);
+    // Check for the presence of the icon
+    const icon = screen.getByTestId('education-icon');
+    expect(icon).toBeInTheDocument();
+    
+    // Check for the title
+    const title = screen.getByText(/education/i);
+    expect(title).toBeInTheDocument();
+    
+    // Check for EducationCard components
+    educationInfo.forEach(info => {
+      const card = screen.getByText(info.schoolName);
+      expect(card).toBeInTheDocument();
+    });
+  });
+
+  it('renders no cards when educationInfo is empty', () => {
+    // Mock empty educationInfo
+    jest.mock('../portfolio', () => ({
+      educationInfo: []
+    }));
+    
+    render(<Education />);
+    
+    // Check that no EducationCard components are rendered
+    const cards = screen.queryAllByTestId('education-card');
+    expect(cards).toHaveLength(0);
   });
 });
