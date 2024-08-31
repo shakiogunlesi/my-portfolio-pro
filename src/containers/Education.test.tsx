@@ -1,8 +1,6 @@
-// Education.test.tsx
-
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/extend-expect';
 import { Education } from './Education';
 import { educationInfo } from '../portfolio';
 
@@ -14,12 +12,15 @@ interface EducationCardProps {
 }
 
 // Mock EducationCard component
-jest.mock('../components/EducationCard', () => (props: EducationCardProps) => (
+const MockEducationCard = (props: EducationCardProps) => (
   <div data-testid="education-card">
     <h5>{props.schoolName}</h5>
     <p>{props.degree}</p>
   </div>
-));
+);
+MockEducationCard.displayName = 'MockEducationCard';
+
+jest.mock('../components/EducationCard', () => MockEducationCard);
 
 describe('Education Component', () => {
   it('renders Education section with correct elements', () => {
